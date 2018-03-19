@@ -4,75 +4,62 @@ var ejs = require('ejs');
 var mysql = require('mysql');
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
+app.set('view engine', 'ejs');
+app.use(express.static('views'));
 
 
 //taking the 'url-exists' module
 var urlexits = require('url-exists');
-var sleep = require('sleep');
-var request = require('request');
 var deasync = require('deasync');
+var dns = require('dns');
 
 
 //the array for checking domains
-var domain=['.com','.org','.in','.club.in','.club'];
+var domain=['.com','.org','.in','.club.in','.club','.es','.se'];
 
 
 //reading the first html page
 app.get('/home',function(req,res,next)
-    {
-        res.sendfile('domainchecker.html');
-    });
+{
+    res.sendfile('domainchecker.html');
+});
     var name,a,b;
     var array=[];
 //action when check button is selected.
 app.post('/check', function(req, res)
 {
     array=[];
-        name = req.body.input;
+    name = req.body.input;
 
-        //running loop of domain array
+    //running loop of domain array
     for(var i =0;i<domain.length;i++)
     {
         var value=domain[i];
-        var url = "http://"+name + value;
-        function foo(err,exits)
-        {
-            if (exits) {
-                array.push('url -'+value);
-
-            }
-            else {
-                array.push('Not a URl -' + value);
-
-            }
-        }
-
+        var url = name + value;
 
         function syncFunc()
         {
             var ret = null;
-            urlexits(url, function(err, result){
-                ret = {err : err, result : result}
+            dns.resolve4(url, function(err, result)
+            {
+                ret = {err : err, result : result+'-'+value}
             });
 
             while((ret == null))
             {
                 deasync.runLoopOnce();
             }
-
-            return (ret.err || ret.result);
+            console.log(ret.err);
+           if(ret.err) return("Not a url - "+value);
+            else return("It is a url - "+value);
         }
 
         array.push(syncFunc());
-
     }
-
-
-
     console.log(array);
-    res.sendfile('domainchecker.html');
-});
 
+    res.render('email',{name : array});
+});
 
 
 //serving on the localhost

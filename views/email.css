@@ -1,0 +1,18 @@
+body{
+    background-image: url("per8.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h1{
+    text-align: center;
+    color: cyan;
+}
+
+.sos{
+    display: block;
+    text-align: center;
+    color: cadetblue;
+    background-color: #dddddd;
+    margin: auto;
+    width: 60px;
+}
