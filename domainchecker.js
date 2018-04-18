@@ -9,6 +9,7 @@ app.use(express.static('views'));
 
 
 //taking the 'url-exists' module
+var urlexits = require('url-exists');
 var deasync = require('deasync');
 var dns = require('dns');
 
