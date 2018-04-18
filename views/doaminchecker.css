@@ -5,6 +5,19 @@ h1{
     text-align: center;
     color: cyan;
 }
+form{
+    margin:auto;max-width:300px;
+}
+.change input[type=text] {
+    border: 1px solid #ccc;
+}
+.change input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 16px;
+    border: none;
+    font-size: 30px;
+}
 
 .sos{
     text-align: center;
@@ -12,6 +25,7 @@ h1{
     background-color: #dddddd;
     margin: auto;
     width: 60px;
+
 }
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);

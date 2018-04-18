@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+    <link rel="stylesheet" href="doaminchecker.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+
+<div class="change">
+    <h1>Enter your word:</h1>
+    <form action="/check" method="post">
+        <input id="input" type="text" name="input">
+        <input type="submit" name="submit" value="Check">
+    </form>
+</div>
+<div>
+    <h1>Domain Status</h1>
+
+       <ul class="card sos">
+         <% name.forEach(function(names){ %>
+           <%= names %><br>
+         <% })%>
+       </ul>
+        <script>
+            name.forEach(function (names) {%= names %})
+        </script>
+
+</div>
+
+
+
+</body>
+</html>

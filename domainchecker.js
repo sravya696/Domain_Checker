@@ -16,15 +16,16 @@ var dns = require('dns');
 
 //the array for checking domains
 var domain=['.com','.org','.in','.club.in','.club','.es','.se'];
-
+var array=[];
 
 //reading the first html page
 app.get('/home',function(req,res,next)
 {
-    res.sendfile('domainchecker.html');
+    array=[];
+    res.render('domainchecker',{name : array});
 });
     var name,a,b;
-    var array=[];
+
 //action when check button is selected.
 app.post('/check', function(req, res)
 {
@@ -58,7 +59,7 @@ app.post('/check', function(req, res)
     }
     console.log(array);
 
-    res.render('email',{name : array});
+    res.render('domainchecker',{name : array});
 });
 
 
