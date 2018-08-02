@@ -8,18 +8,18 @@ app.set('view engine', 'ejs');
 app.use(express.static('views'));
 
 
-//taking the 'url-exists' module
+//Calling the 'url-exists' module
 var urlexits = require('url-exists');
 var deasync = require('deasync');
 var dns = require('dns');
 
 
 //the array for checking domains
-var domain=['.com','.org','.in','.club.in','.club','.es','.se'];
+var domain=['.com','.org','.in','.club.in','.club','.es','.se','.co.in'];
 var array=[];
 
 //reading the first html page
-app.get('/home',function(req,res,next)
+app.get('/home',function(req,res)
 {
     array=[];
     res.render('domainchecker',{name : array});
@@ -51,8 +51,8 @@ app.post('/check', function(req, res)
                 deasync.runLoopOnce();
             }
             console.log(ret.err);
-           if(ret.err) return("Not a url - "+value);
-            else return("It is a url - "+value);
+           if(ret.err) return[value, false]
+            else return[value,true];
         }
 
         array.push(syncFunc());

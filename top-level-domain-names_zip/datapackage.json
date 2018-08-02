@@ -1,0 +1,166 @@
+{
+  "bytes": 181741,
+  "datahub": {
+    "created": "2017-11-09T01:05:48.927227",
+    "findability": "published",
+    "flowid": "core/top-level-domain-names/8",
+    "modified": "2018-03-15T06:40:56.715297",
+    "owner": "core",
+    "ownerid": "core"
+  },
+  "description": "This Data Package contains the delegation details of top-level domains",
+  "hash": "de6940bd5a13e074f6c13040cc58eaaf",
+  "id": "core/top-level-domain-names",
+  "licenses": [
+    {
+      "id": "odc-pddl",
+      "path": "http://opendatacommons.org/licenses/pddl/1.0/",
+      "title": "Public Domain Dedication and License",
+      "version": "1.0"
+    }
+  ],
+  "maintainers": [
+    {
+      "name": "Sadeek Hasna",
+      "twitter": "https://twitter.com/SaddeekHaniHasn"
+    }
+  ],
+  "name": "top-level-domain-names",
+  "resources": [
+    {
+      "bytes": 42789,
+      "datahub": {
+        "type": "original"
+      },
+      "dpp:streamedFrom": "https://s3.amazonaws.com/rawstore.datahub.io/667f4464088f3ca10522e0e2e39c8ae4.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "name": "top-level-domain-names.csv_original",
+      "path": "archive/top-level-domain-names.csv.csv",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "name": "Domain",
+            "type": "string"
+          },
+          {
+            "name": "Type",
+            "type": "string"
+          },
+          {
+            "name": "Sponsoring Organisation",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "bytes": 474,
+      "datahub": {
+        "type": "derived/report"
+      },
+      "description": "Validation report for tabular data",
+      "dpp:streamedFrom": "/tmp/tmpx6m6t79w/core/top-level-domain-names/validation_report/data/14e5fdb0d587c1c6f5d0a5109f6fedf1/validation_report.json",
+      "encoding": "utf-8",
+      "format": "json",
+      "hash": "14e5fdb0d587c1c6f5d0a5109f6fedf1",
+      "name": "validation_report",
+      "path": "data/validation_report.json",
+      "profile": "data-resource"
+    },
+    {
+      "bytes": 43709,
+      "datahub": {
+        "derivedFrom": [
+          "top-level-domain-names.csv"
+        ],
+        "type": "derived/csv"
+      },
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmpx6m6t79w/core/top-level-domain-names/top-level-domain-names.csv_csv/data/667f4464088f3ca10522e0e2e39c8ae4/top-level-domain-names.csv_csv.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "667f4464088f3ca10522e0e2e39c8ae4",
+      "mediatype": "text/csv",
+      "name": "top-level-domain-names.csv_csv",
+      "path": "data/top-level-domain-names.csv_csv.csv",
+      "profile": "data-resource",
+      "rowcount": 919,
+      "schema": {
+        "fields": [
+          {
+            "name": "Domain",
+            "type": "string"
+          },
+          {
+            "name": "Type",
+            "type": "string"
+          },
+          {
+            "name": "Sponsoring Organisation",
+            "type": "string"
+          }
+        ]
+      },
+      "signed": true
+    },
+    {
+      "bytes": 94287,
+      "datahub": {
+        "derivedFrom": [
+          "top-level-domain-names.csv"
+        ],
+        "type": "derived/json"
+      },
+      "dpp:streamedFrom": "/tmp/tmpx6m6t79w/core/top-level-domain-names/top-level-domain-names.csv_json/data/c46b1be79158543bed1031ec074e6c16/top-level-domain-names.csv_json.json",
+      "encoding": "utf-8",
+      "format": "json",
+      "hash": "c46b1be79158543bed1031ec074e6c16",
+      "mediatype": "text/csv",
+      "name": "top-level-domain-names.csv_json",
+      "path": "data/top-level-domain-names.csv_json.json",
+      "profile": "data-resource",
+      "rowcount": 919,
+      "schema": {
+        "fields": [
+          {
+            "name": "Domain",
+            "type": "string"
+          },
+          {
+            "name": "Type",
+            "type": "string"
+          },
+          {
+            "name": "Sponsoring Organisation",
+            "type": "string"
+          }
+        ]
+      },
+      "signed": true
+    },
+    {
+      "bytes": 482,
+      "dpp:streamedFrom": "/tmp/tmpj8fj9ipa/README.md",
+      "format": "md",
+      "name": "readme",
+      "path": "README.md"
+    }
+  ],
+  "sources": [
+    {
+      "name": "The Internet Assigned Numbers Authority (IANA)",
+      "path": "http://www.iana.org/domains/root/db",
+      "title": "The Internet Assigned Numbers Authority (IANA)"
+    }
+  ],
+  "title": "Top Level Domain Names"
+}
